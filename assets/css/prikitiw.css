@@ -50,10 +50,21 @@ p {
   font-size: 23px;
 }
 
-footer {
+section#materi img {
+  width: 30%;
+  border-radius: 5%;
+  margin-bottom: 0;
+}
+
+#footer {
   position: relative;
-  justify-content: center;
+  justify-content: space-between;
   display: flex;
   gap: 40px;
-  text-align: center;
+  padding: 0 20px;
+}
+
+#footer a {
+  /* text-decoration: none; */
+  color: black;
 }
