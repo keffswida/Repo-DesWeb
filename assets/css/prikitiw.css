@@ -1,0 +1,59 @@
+* {
+  font-family: "Fira Code";
+}
+
+#header {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+#header img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#header div a {
+  font-size: 30px;
+  text-decoration: none;
+  color: black;
+}
+
+#header-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 20px;
+}
+
+section#profile img {
+  width: 10%;
+  border-radius: 50%;
+}
+
+table {
+  font-size: 23px;
+}
+
+p#tentang-gwehj {
+  font-size: 21px;
+}
+
+p {
+  font-size: 23px;
+}
+
+footer {
+  position: relative;
+  justify-content: center;
+  display: flex;
+  gap: 40px;
+  text-align: center;
+}
