@@ -1,0 +1,103 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 5% 20%;
+}
+
+#profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+.profile-text {
+  flex: 1;
+}
+
+.profile-text h1 {
+  font-size: 2.5rem;
+  color: #1a1a2e;
+  margin: 0 0 0.25rem 0;
+}
+
+.profile-text h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #555;
+  margin: 0 0 4rem 0;
+}
+
+.profile-text p {
+  font-size: 1.2rem;
+  margin: 0.25rem 0;
+  color: #333;
+}
+
+.profile-img {
+  flex-shrink: 0;
+  margin-left: 2rem;
+}
+
+#profile-pict {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.social {
+  margin-top: 1rem;
+  display: flex;
+  gap: 5rem;
+  text-decoration: none;
+}
+
+hr {
+  border: 1px solid #6b5ce7;
+  align-items: center;
+}
+
+#about {
+  font-size: 1.2rem;
+  margin: 45px 0;
+  line-height: 27px;
+}
+
+#edu,
+#work,
+#org,
+#passion {
+  font-size: 1.2rem;
+}
+
+#edu h3,
+#work h3,
+#org h3,
+#passion h3 {
+  text-align: center;
+  font-style: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.entry {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.entry p {
+  line-height: 5px;
+}
+
+.entry-left {
+  flex: 1;
+}
+
+.entry-right {
+  text-align: right;
+  flex-shrink: 0;
+  margin-left: 2rem;
+}
