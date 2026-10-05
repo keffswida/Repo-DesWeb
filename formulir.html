@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="assets/favicon.ico" />
+    <title>Ini Form</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#home">Ini Home</a>
+        <a href="#about">Ini About</a>
+        <a href="#contact">Ini Kontak</a>
+      </nav>
+    </header>
+    <main>
+      <div id="home">
+        <h1>Ini adalah home</h1>
+      </div>
+
+      <div id="about">
+        <h1>Ini adalah about</h1>
+      </div>
+
+      <div id="contact">
+        <h1>Kontak Saya</h1>
+        <h4>Mari bekerja sama</h4>
+        <p>Kirim pesan, saya akan membalas secepatnya.</p>
+
+        <div class="form-send-smt">
+          <form action="" method="get">
+            <div class="sender-identity">
+              <label for="nama">Nama</label>
+              <input type="text" name="name" id="nama" />
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" />
+            </div>
+            <div class="category">
+              <label for="kategori">Kategori</label>
+              <select name="category" id="kategori">
+                <option value="saran">Saran</option>
+                <option value="kritik">Kritik</option>
+                <option value="pertanyaan">Pertanyaan</option>
+              </select>
+            </div>
+            <div class="method">
+              <label for="">Metode Balasan</label>
+              <input
+                type="checkbox"
+                name="method"
+                id="methodEmail"
+                value="email"
+                checked
+              />
+              <label for="methodEmail">Email</label>
+              <input
+                type="checkbox"
+                name="method"
+                id="methodTelepon"
+                value="telepon"
+              />
+              <label for="methodTelepon">Telepon</label>
+            </div>
+            <div class="message">
+              <label for="message">Pesan</label>
+              <textarea
+                name="message"
+                id="message"
+                cols="50"
+                rows="2"
+              ></textarea>
+            </div>
+            <input type="submit" value="Kirim Pesan" />
+          </form>
+        </div>
+      </div>
+      <footer class="social-media">
+        <a href="https://github.com/keffswida" target="_blank">Github</a>
+        <a href="https://linkedin.com/in/keffswida" target="_blank">Linkedin</a>
+        <a href="https://instagram.com/keffswida" target="_blank">Instagram</a>
+      </footer>
+    </main>
+  </body>
+</html>
