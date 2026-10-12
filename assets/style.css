@@ -1,0 +1,63 @@
+@import url('theme.css');
+
+.header {
+    margin: 10px 1px;
+    padding: 0.5px 20px;
+    /* background-color: #55A9A080; */
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.header .judul {
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.header .greeting {
+    font-size: 30px;
+    font-weight: 800;
+    margin: 0 10 0 0;
+}
+
+.infooo {
+    border: 1px solid #D9DDDC;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.info {
+    text-align: center;
+    font-size: 20px;
+}
+
+.info .nama {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.info .prodi-kelas {
+    opacity: 50%;
+    margin: 0;
+}
+
+.minat-keterampilan {
+    font-size: 20px;
+}
+
+.keterampilan {
+    display: flex;
+    gap: 10px;
+}
+
+.keterampilan p {
+    margin-top: 0;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+footer {
+    font-size: 18px;
+    text-align: center;
+}
