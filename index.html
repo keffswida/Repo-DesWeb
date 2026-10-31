@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="FocusFlow — aplikasi produktivitas personal untuk merencanakan tugas, fokus, dan mengevaluasi progres.">
+  <meta name="theme-color" content="#f7f5f0">
+  <meta name="color-scheme" content="light">
+  <title>FocusFlow - Make Time Count</title>
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/views.css" />
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Lewati ke konten utama</a>
+
+  <div class="app-shell">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar" aria-label="Navigasi utama">
+      <a href="#/dashboard" class="brand" aria-label="FocusFlow, kembali ke dashboard">
+        <span class="brand-mark" aria-hidden="true">F</span>
+        <span class="brand-text">
+          <strong>FocusFlow</strong>
+          <small>Make Time Count</small>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Menu utama">
+        <a href="#/dashboard" class="nav-link is-active" data-nav="dashboard" aria-current="page">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"
+            aria-hidden="true" focusable="false">
+            <rect x="3" y="3" width="7" height="7" rx="1.5" />
+            <rect x="14" y="3" width="7" height="7" rx="1.5" />
+            <rect x="3" y="14" width="7" height="7" rx="1.5" />
+            <rect x="14" y="14" width="7" height="7" rx="1.5" />
+          </svg>
+          <span>Dashboard</span>
+        </a>
+
+        <a class="nav-link" href="#/focus" data-nav="focus">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"
+            aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span>Focus</span>
+        </a>
+
+        <a class="nav-link" href="#/tasks" data-nav="tasks">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"
+            aria-hidden="true" focusable="false">
+            <path d="M9 6h11M9 12h11M9 18h11" stroke-linecap="round" />
+            <path d="m3.5 6 1.2 1.2L7 4.8M3.5 12l1.2 1.2L7 10.8M3.5 18l1.2 1.2L7 16.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          <span>Tasks</span>
+        </a>
+
+        <a class="nav-link" href="#/history" data-nav="history">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"
+            aria-hidden="true" focusable="false">
+            <path d="M3.5 12a8.5 8.5 0 1 0 2.5-6" stroke-linecap="round" />
+            <path d="M3.5 4v5h5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12 7.5V12l3 2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span>History</span>
+        </a>
+
+        <a class="nav-link" href="#/settings" data-nav="settings">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"
+            aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="3" />
+            <path
+              d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21a2 2 0 1 1-4 0v-.09A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3a2 2 0 1 1 0-4h.09A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3a2 2 0 1 1 4 0v.09A1.7 1.7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 19.4 9c.12.35.32.67.6 1 .3.26.68.4 1.1.4H21a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-1.51.6Z"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span>Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-foot">
+        <p class="sidebar-note">Data tersimpan lokal di browser ini. Tidak dikirim ke server.</p>
+      </div>
+    </aside>
+    <!-- ./ SIDEBAR -->
+
+    <button type="button" class="sidebar-backdrop" id="sidebar-backdrop" aria-label="Tutup Menu" hidden></button>
+
+    <!-- MAIN -->
+    <div class="main">
+      <header class="topbar">
+        <button type="button" class="icon-btn menu-toggle" id="menu-toggle" aria-label="Buka Menu"
+          aria-controls="sidebar" aria-expanded="false">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"
+            aria-hidden="true" focusable="false">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
+          </svg>
+        </button>
+
+        <div class="topbar-title">
+          <h1 id="page-title">Dashboard</h1>
+          <p id="page-subtitle">Ringkasan produktivitasmu</p>
+        </div>
+
+        <div class="topbar-meta">
+          <time datetime="" id="today-label">Hari ini</time>
+        </div>
+      </header>
+
+      <!-- tabindex="-1" membuat skip link bisa memindahkan fokus keyboard
+           ke konten utama. Tanpa ini, href="#main-content" hanya scroll. -->
+      <main id="main-content" class="content" tabindex="-1">
+        <!-- Dashboard -->
+        <section class="view" id="view-dashboard" data-view="dashboard" tabindex="-1">
+          <div class="page-head">
+            <div>
+              <h2 id="dashboard-greeting">Selamat Datang</h2>
+              <p class="muted">Pilih satu tugas, mulai timer, lalu lihat progresmu.</p>
+            </div>
+            <div class="page-actions">
+              <button type="button" class="btn btn-primary" data-action="new-task">+ Tambah tugas</button>
+              <a href="#/focus" class="btn btn-ghost">Mulai fokus</a>
+            </div>
+          </div>
+
+          <div class="stat-grid">
+            <article class="card stat-card">
+              <p class="stat-label">Total waktu fokus</p>
+              <p class="stat-value" id="stat-focus-total">0m</p>
+              <p class="stat-hint">Sepanjang waktu</p>
+            </article>
+
+            <article class="card stat-card">
+              <p class="stat-label">Sesi fokus</p>
+              <p class="stat-value" id="stat-sessions">0</p>
+              <p class="stat-hint">Sesi selesai</p>
+            </article>
+
+            <article class="card stat-card">
+              <p class="stat-label">Tugas selesai</p>
+              <p class="stat-value" id="stat-tasks-done">0</p>
+              <p class="stat-hint" id="stat-tasks-hint">dari 0 tugas</p>
+            </article>
+
+            <article class="card stat-card">
+              <p class="stat-label">Fokus hari ini</p>
+              <p class="stat-value" id="stat-today-focus">0m</p>
+              <p class="stat-hint">Sejak tengah malam</p>
+            </article>
+          </div>
+
+          <div class="dashboard-grid">
+            <section class="card" aria-labelledby="today-heading">
+              <div class="card-head">
+                <h3 id="today-heading">Tugas hari ini</h3>
+                <a href="#/tasks">Lihat semua</a>
+              </div>
+
+              <ul class="task-list task-list--compact" id="today-task-list"></ul>
+              <p class="empty-state" id="today-empty">
+                Belum ada tugas. Tambahkan satu untuk mulai.
+              </p>
+            </section>
+
+            <div class="stack">
+              <section class="card" aria-labelledby="progress-heading">
+                <div class="card-head">
+                  <h3 id="progress-heading">Progress hari ini</h3>
+                </div>
+
+                <div class="progress" id="daily-progress" role="progressbar" aria-labelledby="progress-heading"
+                  aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                  <span class="progress-bar" id="daily-progress-bar"></span>
+                </div>
+                <p class="muted" id="daily-progress-text">0 dari 0 tugas selesai</p>
+              </section>
+
+              <section class="card" aria-labelledby="recent-heading">
+                <div class="card-head">
+                  <h3 id="recent-heading">Riwayat terakhir</h3>
+                  <a href="#/history">Lihat semua</a>
+                </div>
+
+                <ul class="session-list session-list--compact" id="recent-session-list"></ul>
+                <p class="empty-state" id="recent-empty">Belum ada sesi fokus.</p>
+              </section>
+            </div>
+          </div>
+        </section>
+        <!-- ./ Dashboard -->
+
+        <!-- FOCUS -->
+        <section class="view" id="view-focus" data-view="focus" tabindex="-1" hidden>
+          <div class="page-head">
+            <div>
+              <h2>Fokus</h2>
+              <p class="muted">Satu tugas, satu sesi, tanpa distraksi</p>
+            </div>
+          </div>
+
+          <div class="focus-grid">
+            <section class="card timer-card" aria-labelledby="timer-heading">
+              <h2 class="sr-only" id="timer-heading">Timer</h2>
+
+              <div class="mode-switch" role="group" aria-label="Mode timer">
+                <button type="button" class="mode-btn is-active" data-mode="focus" aria-pressed="true">
+                  Fokus
+                </button>
+                <button type="button" class="mode-btn" data-mode="break" aria-pressed="false">
+                  Istirahat
+                </button>
+              </div>
+
+              <div class="timer-ring">
+                <svg viewBox="0 0 220 220" aria-hidden="true" focusable="false">
+                  <circle class="timer-track" cx="110" cy="110" r="96" />
+                  <circle class="timer-progress" id="timer-progress" cx="110" cy="110" r="96" stroke-dasharray="603.19"
+                    stroke-dashoffset="0" />
+                </svg>
+
+                <div class="timer-face">
+                  <p class="timer-time" id="timer-display" role="timer" aria-live="off">25:00</p>
+
+                  <p class="timer-mode-label" id="timer-mode-label">Waktu fokus</p>
+                </div>
+              </div>
+
+              <p class="sr-only" id="timer-status" aria-live="polite">Pilih tugas terlebih dahulu.</p>
+
+              <div class="timer-actions">
+                <button type="button" class="btn btn-primary btn-lg" id="timer-start" disabled>
+                  Mulai
+                </button>
+                <button type="button" class="btn btn-primary btn-lg" id="timer-pause" disabled>
+                  Jeda
+                </button>
+                <button type="button" class="btn btn-primary btn-lg" id="timer-resume" disabled>
+                  Lanjutkan
+                </button>
+                <button type="button" class="btn btn-ghost btn-lg" id="timer-reset" disabled>
+                  Reset
+                </button>
+              </div>
+
+              <p class="timer-hint">Timer memakai waktu akhir sesi, jadi tetap akurat saat tab tidak aktif.</p>
+
+            </section>
+
+            <aside class="card focus-side" aria-labelledby="active-task-heading">
+              <h2 id="active-task-heading">Tugas aktif</h2>
+
+              <div class="field">
+                <label for="focus-task-select" class="field-label">Pilih tugas</label>
+                <select id="focus-task-select" class="select" aria-describedby="focus-task-meta">
+                  <option value="">Belum ada tugas</option>
+                </select>
+              </div>
+
+              <p class="muted" id="focus-task-meta">Tambahkan tugas dulu di halaman Tasks.</p>
+
+              <a href="#/tasks" class="btn btn-ghost btn-sm">Kelola tugas</a>
+
+              <div class="focus-note">
+                <h3>Sesi dicatat saat</h3>
+                <ul class="plain-list">
+                  <li>Timer fokus selesai secara normal.</li>
+                  <li>Bukan saat dijeda atau di-reset.</li>
+                  <li>Hanya satu kali per sesi.</li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </section>
+        <!-- ./ FOCUS -->
+
+        <!-- TASKS -->
+        <section class="view" id="view-tasks" data-view="tasks" tabindex="-1" hidden>
+          <div class="page-head">
+            <div>
+              <h2>Tugas</h2>
+              <p class="muted" id="task-count-label">0 tugas</p>
+            </div>
+
+            <button type="button" class="btn btn-primary" data-action="new-task">+ Tambah tugas</button>
+          </div>
+
+          <div class="toolbar">
+            <div class="filter-group" role="group" aria-label="Filter tugas">
+              <button type="button" class="filter-btn is-active" data-filter="all" aria-pressed="true">
+                Semua
+              </button>
+              <button type="button" class="filter-btn" data-filter="active" aria-pressed="false">
+                Belum selesai
+              </button>
+              <button type="button" class="filter-btn" data-filter="done" aria-pressed="false">
+                Selesai
+              </button>
+            </div>
+          </div>
+
+          <ul class="task-list card" id="task-list"></ul>
+
+          <div class="card empty-state" id="tasks-empty">
+            <p>Belum ada tugas. Mulai dari satu pekerjaan kecil.</p>
+            <button type="button" class="btn btn-primary" data-action="new-task">Tambah tugas pertama</button>
+          </div>
+        </section>
+        <!-- ./ TASKS -->
+
+        <!-- HISTORY -->
+        <section class="view" id="view-history" data-view="history" tabindex="-1" hidden>
+          <div class="page-head">
+            <div>
+              <h2>Riwayat</h2>
+              <p class="muted" id="history-summary">0 sesi</p>
+            </div>
+            <button type="button" class="btn btn-danger-ghost" id="history-clear" disabled>
+              Hapus riwayat
+            </button>
+          </div>
+
+          <ul class="card session-list" id="history-list"></ul>
+
+          <div class="card empty-state" id="history-empty">
+            <p>Belum ada sesi selesai. Jalankan timer fokus untuk mencatat sesi pertama.</p>
+            <a href="#/focus" class="btn btn-primary">Mulai fokus</a>
+          </div>
+        </section>
+        <!-- ./ HISTORY -->
+
+        <!-- SETTINGS -->
+        <section class="view" id="view-settings" data-view="settings" tabindex="-1" hidden>
+          <div class="page-head">
+            <div>
+              <h2>Pengaturan</h2>
+              <p class="muted">Atur durasi timer dan preferensi aplikasi.</p>
+            </div>
+          </div>
+
+          <form class="card settings-form" id="settings-form">
+            <fieldset>
+              <legend>Durasi timer</legend>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="setting-focus">Durasi fokus (menit)</label>
+                  <input type="number" name="focusMin" id="setting-focus" min="1" max="120" step="1" inputmode="numeric"
+                    value="25" required>
+                </div>
+
+                <div class="field">
+                  <label for="setting-break">Durasi istirahat (menit)</label>
+                  <input type="number" name="breakMin" id="setting-break" min="1" max="60" step="1" inputmode="numeric"
+                    value="5" required>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Preferensi</legend>
+
+              <label for="setting-sound" class="switch-row">
+                <span>
+                  <strong>Suara saat timer selesai</strong>
+                  <small>Bunyi singkat sebagai penanda.</small>
+                </span>
+                <input type="checkbox" id="setting-sound" name="sound" checked>
+              </label>
+            </fieldset>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Simpan pengaturan</button>
+              <button type="button" class="btn btn-ghost" id="settings-default">Kembalikan default</button>
+            </div>
+          </form>
+
+          <section class="card danger-zone" aria-labelledby="data-heading">
+            <h3 id="data-heading">Data &amp; penyimpanan</h3>
+            <p>
+              FocusFlow menyimpan tugas, riwayat sesi, dan pengaturan di localStorage browser ini.
+              Data tidak disinkronkan antarperangkat atau antarbrowser.
+            </p>
+            <button type="button" class="btn btn-danger" id="data-reset">Hapus semua data</button>
+          </section>
+        </section>
+        <!-- ./ SETTINGS -->
+
+        <!-- FOOTER -->
+        <footer class="app-footer">
+          <p>FocusFlow menyimpan data di browser ini. Tidak ada data yang dikirim ke server.</p>
+        </footer>
+        <!-- ./ FOOTER -->
+
+        <div class="toast-region" id="toast-region" role="status" aria-live="polite" aria-atomic="true"></div>
+      </main>
+    </div>
+    <!-- ./ MAIN -->
+
+  </div>
+
+  <!-- DIALOG: TAMBAH / EDIT TUGAS -->
+  <dialog class="dialog" id="task-dialog" aria-labelledby="task-dialog-title">
+    <form class="dialog-form" id="task-form">
+      <div class="dialog-head">
+        <h2 id="task-dialog-title">Tambah tugas</h2>
+        <button type="button" class="icon-btn" data-close-dialog aria-label="Tutup dialog">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"
+            aria-hidden="true" focusable="false">
+            <path d="m6 6 12 12M18 6 6 18" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+
+      <input type="hidden" id="task-id" value="">
+
+      <div class="field">
+        <label for="task-title">Judul tugas</label>
+        <input type="text" id="task-title" name="title" maxlength="80" placeholder="Contoh: Belajar CSS Grid"
+          autocomplete="off" required autofocus>
+      </div>
+
+      <div class="field">
+        <label for="task-estimate">Estimasi (menit)</label>
+        <input type="number" name="estimateMin" id="task-estimate" min="5" max="480" step="5" inputmode="numeric"
+          value="30" required>
+        <p class="field-hint">Perkiraan durasi, bukan batas timer.</p>
+      </div>
+
+      <div class="dialog-actions">
+        <button type="button" class="btn btn-ghost" data-close-dialog>Batal</button>
+        <button type="submit" class="btn btn-primary" id="task-submit">Simpan</button>
+      </div>
+    </form>
+  </dialog>
+  <!-- ./ DIALOG: TAMBAH / EDIT TUGAS -->
+
+  <!-- DIALOG: KONFIRMASI -->
+  <dialog class="dialog" id="confirm-dialog" aria-labelledby="confirm-title">
+    <form class="dialog-form" method="dialog">
+      <h2 id="confirm-title">Konfirmasi</h2>
+      <p id="confirm-message">Yakin ingin melanjutkan?</p>
+
+      <div class="dialog-actions">
+        <button type="submit" class="btn btn-ghost" value="cancel">Batal</button>
+        <button type="submit" class="btn btn-danger" id="confirm-ok" value="confirm">Hapus</button>
+      </div>
+    </form>
+  </dialog>
+  <!-- ./ DIALOG: KONFIRMASI -->
+
+  <!-- TEMPLATE: TASK ITEM -->
+  <template id="task-item-template">
+    <li class="task-item">
+      <input type="checkbox" class="task-toggle" aria-label="Tandai selesai">
+
+      <div class="task-body">
+        <p class="task-title"></p>
+        <p class="task-meta">
+          <span class="task-estimate"></span>
+          <span class="task-sep" aria-hidden="true">·</span>
+          <span class="task-date"></span>
+        </p>
+      </div>
+
+      <div class="task-actions">
+        <button type="button" class="icon-btn task-edit" aria-label="Edit tugas">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"
+            aria-hidden="true" focusable="false">
+            <path d="M4 20h4l10.5-10.5a2.1 2.1 0 0 0-3-3L5 17v3Z" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+
+        <button type="button" class="icon-btn task-delete" aria-label="Hapus tugas">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"
+            aria-hidden="true" focusable="false">
+            <path d="M4 7h16M9 7V5h6v2M7 7l1 13h8l1-13" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </li>
+  </template>
+  <!-- ./ TEMPLATE: TASK ITEM -->
+
+  <!-- TEMPLATE: SESSION ITEM -->
+  <template id="session-item-template">
+    <li class="session-item">
+      <span class="session-dot" aria-hidden="true"></span>
+      <div class="session-body">
+        <p class="session-title"></p>
+        <p class="session-meta">
+          <span class="session-duration"></span>
+          <span class="task-sep" aria-hidden="true">·</span>
+          <time class="session-time"></time>
+        </p>
+      </div>
+    </li>
+  </template>
+  <!-- ./ TEMPLATE: SESSION ITEM -->
+
+  <noscript>
+    <p class="noscript-warning">
+      FocusFlow membutuhkan JavaScript. Aktifkan JavaScript di browser untuk menggunakan aplikasi.
+    </p>
+  </noscript>
+
+  <script src="js/utils.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/tasks.js"></script>
+  <script src="js/timer.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/history.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>

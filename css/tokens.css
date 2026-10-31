@@ -1,0 +1,137 @@
+/* Design tokens — satu-satunya tempat nilai visual didefinisikan. */
+
+/* ------------------------------------------------------------------ */
+/* WARNA                                                               */
+/* ------------------------------------------------------------------ */
+:root {
+  /* Permukaan */
+  --color-bg: #f7f5f0;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f1efe8;
+  --color-border: #e4e1d8;
+  --color-border-strong: #d3cfc2;
+
+  /* Teks */
+  --color-text: #2b2b28;
+  --color-text-soft: #55554d;
+  --color-muted: #6f6f66;
+  --color-on-accent: #ffffff;
+
+  /* Aksen hijau sage */
+  --color-accent: #9ab08d;
+  --color-accent-strong: #7c9a72;
+  --color-accent-ink: #4f6b45;
+  --color-accent-soft: #e8eee2;
+
+  /* Terracotta — untuk tindakan destruktif */
+  --color-danger: #b4553f;
+  --color-danger-strong: #9c4633;
+  --color-danger-ink: #7a3323;
+  --color-danger-soft: #f6e7e2;
+
+  /* Interaksi */
+  --color-focus-ring: #7c9a72;
+  --color-backdrop: rgb(43 43 40 / 45%);
+  --color-track: #e4e1d8;
+
+  /* Status */
+  --color-success: #7c9a72;
+  --color-shadow-tint: 43 43 40;
+}
+
+/* ------------------------------------------------------------------ */
+/* TIPOGRAFI                                                           */
+/* ------------------------------------------------------------------ */
+:root {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas,
+    monospace;
+
+  --text-xs: 0.75rem;   /* 12px */
+  --text-sm: 0.8125rem; /* 13px */
+  --text-base: 0.9375rem; /* 15px */
+  --text-md: 1rem;      /* 16px */
+  --text-lg: 1.125rem;  /* 18px */
+  --text-xl: 1.375rem;  /* 22px */
+  --text-2xl: 1.75rem;  /* 28px */
+  --text-3xl: 2.25rem;  /* 36px */
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+
+  --leading-tight: 1.2;
+  --leading-snug: 1.35;
+  --leading-normal: 1.6;
+
+  --tracking-tight: -0.015em;
+  --tracking-wide: 0.02em;
+}
+
+/* ------------------------------------------------------------------ */
+/* SPACING                                                             */
+/* ------------------------------------------------------------------ */
+:root {
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.5rem;   /* 24px */
+  --space-6: 2rem;     /* 32px */
+  --space-7: 3rem;     /* 48px */
+  --space-8: 4rem;     /* 64px */
+
+  --content-max: 1080px;
+  --sidebar-width: 240px;
+  --topbar-height: 64px;
+}
+
+/* ------------------------------------------------------------------ */
+/* BENTUK                                                              */
+/* ------------------------------------------------------------------ */
+:root {
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  --border-width: 1px;
+
+  --shadow-1: 0 1px 2px rgb(var(--color-shadow-tint) / 4%);
+  --shadow-2: 0 2px 8px rgb(var(--color-shadow-tint) / 7%);
+  --shadow-3: 0 12px 32px rgb(var(--color-shadow-tint) / 14%);
+
+  --ring-width: 2px;
+  --ring-offset: 2px;
+}
+
+/* ------------------------------------------------------------------ */
+/* EFEK & WAKTU                                                        */
+/* ------------------------------------------------------------------ */
+:root {
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 320ms;
+
+  --ease-standard: cubic-bezier(0.2, 0, 0.13, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ------------------------------------------------------------------ */
+/* LAYER                                                               */
+/* ------------------------------------------------------------------ */
+:root {
+  --z-base: 0;
+  --z-sticky: 10;
+  --z-backdrop: 40;
+  /* Sidebar off-canvas harus di ATAS backdrop, kalau tidak backdrop
+     menutupi menu dan seluruh nav di mobile tidak bisa diklik. */
+  --z-sidebar: 45;
+  --z-dialog: 50;
+  --z-toast: 60;
+}

@@ -1,0 +1,302 @@
+/* Base — reset, elemen dasar, utilitas global. */
+
+/* ------------------------------------------------------------------ */
+/* RESET                                                               */
+/* ------------------------------------------------------------------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-tight);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Atribut hidden menang atas display apa pun. */
+[hidden] {
+  display: none !important;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+svg {
+  flex-shrink: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+fieldset {
+  border: none;
+}
+
+template {
+  display: none;
+}
+
+::placeholder {
+  color: var(--color-muted);
+  opacity: 1;
+}
+
+/* Hilangkan spinner di input number; JS mengelola validasinya. */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type="checkbox"] {
+  accent-color: var(--color-accent-strong);
+}
+
+/* ------------------------------------------------------------------ */
+/* TIPOGRAFI                                                           */
+/* ------------------------------------------------------------------ */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-extrabold);
+}
+
+h2 {
+  font-size: var(--text-lg);
+}
+
+h3 {
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+}
+
+h4 {
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+}
+
+p {
+  text-wrap: pretty;
+}
+
+strong,
+b {
+  font-weight: var(--weight-semibold);
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: var(--color-accent-ink);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+hr {
+  height: var(--border-width);
+  margin-block: var(--space-4);
+  background-color: var(--color-border);
+  border: none;
+}
+
+legend {
+  padding: 0;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-soft);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+code,
+kbd,
+samp {
+  font-family: var(--font-mono);
+  font-size: 0.925em;
+}
+
+/* ------------------------------------------------------------------ */
+/* FOCUS                                                               */
+/* ------------------------------------------------------------------ */
+:focus-visible {
+  outline: var(--ring-width) solid var(--color-focus-ring);
+  outline-offset: var(--ring-offset);
+  border-radius: var(--radius-xs);
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Section view difokuskan JS setelah navigasi; tidak perlu outline. */
+[tabindex="-1"]:focus {
+  outline: none;
+}
+
+/* ------------------------------------------------------------------ */
+/* UTILITAS                                                            */
+/* ------------------------------------------------------------------ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: fixed;
+  top: var(--space-3);
+  left: var(--space-3);
+  z-index: var(--z-toast);
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-accent-ink);
+  color: var(--color-on-accent);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-2);
+  transform: translateY(-200%);
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+  text-decoration: none;
+}
+
+.muted {
+  color: var(--color-muted);
+}
+
+.plain-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.plain-list li {
+  position: relative;
+  padding-left: var(--space-4);
+}
+
+.plain-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.6em;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  background-color: var(--color-accent);
+  border-radius: var(--radius-pill);
+}
+
+.noscript-warning {
+  position: fixed;
+  inset: auto var(--space-4) var(--space-4);
+  z-index: var(--z-toast);
+  padding: var(--space-4);
+  background-color: var(--color-danger-soft);
+  color: var(--color-danger-ink);
+  border: var(--border-width) solid var(--color-danger);
+  border-radius: var(--radius-md);
+  font-weight: var(--weight-medium);
+  text-align: center;
+}
+
+/* ------------------------------------------------------------------ */
+/* SCROLLBAR (opsional, tipis dan netral)                              */
+/* ------------------------------------------------------------------ */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-strong) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-border-strong);
+  border: 3px solid var(--color-bg);
+  border-radius: var(--radius-pill);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-muted);
+}
