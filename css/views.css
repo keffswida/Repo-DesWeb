@@ -210,6 +210,147 @@
 }
 
 /* ------------------------------------------------------------------ */
+/* TENTANG DEVELOPER                                                   */
+/* ------------------------------------------------------------------ */
+.about-hero {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.about-hero-photo {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.about-hero-photo img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: var(--border-width) solid var(--color-border);
+  box-shadow: var(--shadow-1);
+  background-color: var(--color-surface-alt);
+}
+
+.about-hero-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.about-name {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-extrabold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+.about-role {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-soft);
+}
+
+.about-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-chips li {
+  padding: var(--space-1) var(--space-3);
+  background-color: var(--color-accent-soft);
+  color: var(--color-accent-ink);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.about-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.about-card h3 {
+  margin-bottom: var(--space-4);
+}
+
+.about-list {
+  display: grid;
+  grid-template-columns: minmax(90px, auto) minmax(0, 1fr);
+  gap: var(--space-3) var(--space-5);
+  margin: 0;
+}
+
+.about-list dt {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  color: var(--color-muted);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.about-list dd {
+  margin: 0;
+  font-size: var(--text-base);
+  color: var(--color-text);
+}
+
+.about-list dd a {
+  font-weight: var(--weight-medium);
+}
+
+.about-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-skills li {
+  padding: var(--space-1) var(--space-3);
+  background-color: var(--color-accent-soft);
+  color: var(--color-accent-ink);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+}
+
+.about-bio {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text-soft);
+}
+
+.about-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ------------------------------------------------------------------ */
 /* FOOTER                                                              */
 /* ------------------------------------------------------------------ */
 .app-footer {
@@ -231,6 +372,15 @@
   .stat-grid {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  .about-list {
+    grid-template-columns: minmax(90px, auto) minmax(0, 1fr);
+    gap: var(--space-3) var(--space-5);
+  }
+
+  .about-list dd {
+    margin-bottom: 0;
+  }
 }
 
 @media (min-width: 900px) {
@@ -240,5 +390,11 @@
 
   .focus-grid {
     grid-template-columns: 1.4fr 1fr;
+  }
+
+  /* Biodata/Tentang Saya kiri, Keahlian/Portfolio & Sosial kanan. */
+  .about-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
+    gap: var(--space-6);
   }
 }

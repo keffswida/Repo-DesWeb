@@ -15,7 +15,8 @@
     focus: { title: "Focus", subtitle: "Satu tugas, satu sesi, tanpa distraksi" },
     tasks: { title: "Tasks", subtitle: "Kelola daftar tugasmu" },
     history: { title: "History", subtitle: "Riwayat sesi fokus" },
-    settings: { title: "Settings", subtitle: "Preferensi dan pengelolaan data" }
+    settings: { title: "Settings", subtitle: "Preferensi dan pengelolaan data" },
+    tentang: { title: "Tentang Developer", subtitle: "Profil pembuat FocusFlow" }
   };
 
   var currentRoute = null;
